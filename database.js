@@ -2,7 +2,6 @@
 
 const Pool = require('pg').Pool;
 
-
 // 1 - Abrir conexão
 // 2 - Execurar comando SQL (select, insert....)
 // 3 - Fechar conexão
