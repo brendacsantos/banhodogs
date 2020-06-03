@@ -15,8 +15,8 @@ const pool = new Pool ({
     ssl: {rejectUnauthorized: false}
 });
 
-/* const sqlCreate = `
-    DROP TABLE banho
+ const sqlCreate = `
+  
     CREATE TABLE IF NOT EXISTS banho
     (
         ID serial primary key,
@@ -27,11 +27,11 @@ const pool = new Pool ({
     )
 `;
 
-//pool.query(sqlCreate, function(error,result) {
-//    if(error)
-//     throw error
-//     console.log('Tabela criada com sucesso!');
-});*/
+   pool.query(sqlCreate, function(error,result) {
+    if(error)
+    throw error
+    console.log('Tabela criada com sucesso!');
+});
 
 module.exports = {
 
