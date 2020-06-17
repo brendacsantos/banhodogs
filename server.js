@@ -18,7 +18,7 @@ server.post('/', async function(request, response) {
     const nomedog = request.body.nomedog;
     const peso = request.body.peso;
     const valor = request.body.valor;
-    const status= request.body.status;
+    const status= request.body.status; 
 
     const result = await database.insert(nomedog, peso, valor, status);
 
