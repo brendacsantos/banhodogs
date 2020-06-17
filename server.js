@@ -25,18 +25,14 @@ server.post('/', async function(request, response) {
     return response.status(204).send();
 })
 
-server.put('/', async function(request, response) {
 
-    const id = request.body.id;
-    const nomedog = request.body.nomedog; 
-    const peso = request.body.peso;
-    const valor = request.body.valor;
-    const status= request.body.status;
-
-    const result = await database.update(nomedog, peso, valor, status);
-
+server.put('/:id', async function(request, response) { 
+    const id = request.params.id;
+    const {nomedog, peso, valor, status} = request.body;
+    const result = await database.update(id, nomedog, peso, valor, status);
     return response.status(204).send();
 })
+
 
 server.delete('/:id', async function(request, response) {
     
