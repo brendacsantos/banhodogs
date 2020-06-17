@@ -64,7 +64,7 @@ async select (){
     nomedog = $2,  
     peso = $3,  
     valor = $4,  
-    status = $5,  
+    status = $5  
     where $1 = id `;  
 
     const result = await pool.query(sql,[ id, nomedog, peso, valor, status])
