@@ -25,7 +25,7 @@ server.post('/', async function(request, response) {
     return response.status(204).send();
 })
 
-server.put('/:id', async function(request, response) {
+server.put('/', async function(request, response) {
 
     const id = request.body.id;
     const nomedog = request.body.nomedog; 
