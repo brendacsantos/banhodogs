@@ -61,13 +61,13 @@ async select (){
 
     async  update(id, nomedog, peso, valor, status) {
     const sql = ` UPDATE banho SET 
-    nomedog = $2,
-    peso = $3,
-    valor = $4,
-    status = $5,
-    where $1 = id `;
+    nomedog = $2,  
+    peso = $3,  
+    valor = $4,  
+    status = $5,  
+    where $1 = id `;  
 
-    const result = await pool.query([sql, id, nomedog, peso, valor, status])
+    const result = await pool.query(sql,[ id, nomedog, peso, valor, status])
 
     return result.rowCount;
     
