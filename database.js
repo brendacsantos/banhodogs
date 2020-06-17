@@ -49,11 +49,11 @@ async select (){
     return result.rows;
 },
 
-  async  delete(nomedog){
+  async  delete(id){
 
-        const sql = `DELETE FROM banho WHERE nomedog = $1`;
+        const sql = `DELETE FROM banho WHERE id = $1`;
         
-        const result = await pool.query(sql, [nomedog]);
+        const result = await pool.query(sql, [id]);
         return result.rowCount;
 },
 
