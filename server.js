@@ -37,12 +37,11 @@ server.put('/', async function(request, response) {
     return response.status(204).send();
 })
 
-server.delete('/', async function(request, response) {
-
-    const nomedog = request.body.nomedog;
-    const result = await database.delete(nomedog);
-
-    return response.status(204).send();
+server.delete('/:id', async function(request, response) {
+    
+    const id = request.params.id;
+    const result = await database.delete(id);
+   return response.status(204).send()
 })
 
 server.listen(process.env.PORT || 3000);
