@@ -57,29 +57,18 @@ async select (){
         return result.rowCount;
 },
 
+  
+     async  update(id, nomedog, peso, valor, status){
 
-   async  update(id, nomedog, peso, valor, status) {
-    const sql = ` UPDATE banho SET 
-    nomedog = $2,
-    peso = $3,
-    valor = $4,
-    status = $5,
-    where $1 = id `;
+        const sql = `UPDATE banho
+        SET nomedog = $2, peso = $3, valor = $4
+        WHERE id = $1`;
 
-    const result = await pool.query(sql, [id, nomedog, peso, valor, status])
+        const result = await pool.query(sql, [id, nomedog, peso, status]);
 
-    return result.rowCount;
-    
-},
-    
+        return result.rowCount;
+    },
        
-    
-/*async update(id, item, valor, tamanho) {
-    const sql = `UPDATE itensparavenda
-    SET item = $1, valor= $2 , tamanho= $3
-    WHERE  id = $4`
-    const result = await pool.query(sql,[item, valor, tamanho, id]);
-    return result.rowCount;
-},*/
+
 
 }
