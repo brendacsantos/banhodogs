@@ -36,7 +36,7 @@ const pool = new Pool ({
 module.exports = {
 
 async insert (nomedog, peso, valor,status){
-    const sql = `INSERT INTO banho (nomedog, peso, valor, status) VALUES ($1, $2, $3)`;
+    const sql = `INSERT INTO banho (nomedog, peso, valor, status) VALUES ($1, $2, $3, $4)`;
     
     const result = await pool.query(sql, [nomedog, peso, valor,status]);
     return result.rowCount;
